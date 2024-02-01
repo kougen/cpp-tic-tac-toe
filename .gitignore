@@ -1,5 +1,7 @@
 .idea/
-a.out
-
+*.out
+*.h.gch
+*.o
 bin/
 out/
+tests/*tests
