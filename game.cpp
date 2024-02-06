@@ -293,234 +293,323 @@ void offlineMode(string player1, string player2) {
                 C[row - 1][column - 1] = 0;
             }
         } else if (whosNext % 2 == 1) {
-
+            if (column == 1 && row == 1) {
+                for (int i = 0; i < 11; i++) {
+                    for (int j = 0; j < 21; j++) {
+                        if ((i == 2 || i == 10) && (j > 3 && j < 18))
+                            A[i][j] = '*';
+                        if (i > 2 && i < 10 && (j==3 || j==18))
+                            A[i][j]= '*';
+                    }
+                }
             }
-            whosNext++;
-            takenSpots++;
-            //Here starts the winner score counter and etc. like player1 wins:2 player2 wins:1
-            if (C[0][0] != 2 && C[0][0] != 1 && C[0][0] == C[0][1] && C[0][0] == C[0][2]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
+            if (column == 2 && row == 1) {
+                for (int i = 0; i < 11; i++) {
+                    for (int j = 21; j < 42; j++) {
+                        if ((i == 2 || i == 10) && (j > 24 && j < 39))
+                            A[i][j] = '*';
+                        if (i > 2 && i < 10 && (j==24 || j==39))
+                            A[i][j]= '*';
                     }
-                    cout << endl;
                 }
-                cout << player1 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[1][0] != 2 && C[1][0] != 1 && C[1][0] == C[1][1] && C[1][0] == C[1][2]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
+            }
+            if (column == 3 && row == 1) {
+                for (int i = 0; i < 11; i++) {
+                    for (int j = 42; j < 62; j++) {
+                        if ((i == 2 || i == 10) && (j > 45 && j < 60))
+                            A[i][j] = '*';
+                        if (i > 2 && i < 10 && (j==45 || j==60))
+                            A[i][j]= '*';
                     }
-                    cout << endl;
                 }
-                cout << player1 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[2][0] != 2 && C[2][0] != 1 && C[2][0] == C[2][1] && C[2][0] == C[2][2]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
+            }
+            else if (column == 1 && row == 2) {
+                for (int i = 11; i < 21; i++) {
+                    for (int j = 0; j < 21; j++) {
+                        if ((i == 12 || i == 20) && (j > 3 && j < 18))
+                            A[i][j] = '*';
+                        if (i > 12 && i < 20 && (j==3 || j==18))
+                            A[i][j]= '*';
                     }
-                    cout << endl;
                 }
-                cout << player1 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][1] != 2 && C[0][1] != 1 && C[0][1] == C[1][1] && C[0][1] == C[2][1]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
+            }
+            if (column == 2 && row == 2) {
+                for (int i = 11; i < 21; i++) {
+                    for (int j = 21; j < 42; j++) {
+                        if ((i == 12 || i == 20) && (j > 24 && j < 39))
+                            A[i][j] = '*';
+                        if (i > 12 && i < 20 && (j==24 || j==39))
+                            A[i][j]= '*';
                     }
-                    cout << endl;
                 }
-                cout << player1 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][0] != 2 && C[0][0] != 1 && C[0][0] == C[1][0] && C[0][0] == C[2][0]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
+            }
+            if (column == 3 && row == 2) {
+                for (int i = 11; i < 21; i++) {
+                    for (int j = 42; j < 62; j++) {
+                        if ((i == 12 || i == 20) && (j > 45 && j < 60))
+                            A[i][j] = '*';
+                        if (i > 12 && i < 20 && (j==45 || j==60))
+                            A[i][j]= '*';
                     }
-                    cout << endl;
                 }
-                cout << player1 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][2] != 2 && C[0][2] != 1 && C[0][2] == C[1][2] && C[0][2] == C[2][2]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
+            }
+            if (column == 1 && row == 3) {
+                for (int i = 21; i < 32; i++) {
+                    for (int j = 0; j < 21; j++) {
+                        if ((i == 23 || i == 31) && (j > 3 && j < 18))
+                            A[i][j] = '*';
+                        if (i > 23 && i < 31 && (j==3 || j==18))
+                            A[i][j]= '*';
                     }
-                    cout << endl;
                 }
-                cout << player1 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][0] != 2 && C[0][0] != 1 && C[0][0] == C[1][1] && C[0][0] == C[2][2]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
+            }
+            if (column == 2 && row == 3) {
+                for (int i = 21; i < 32; i++) {
+                    for (int j = 21; j < 42; j++) {
+                        if ((i == 23 || i == 31) && (j > 24 && j < 39))
+                            A[i][j] = '*';
+                        if (i > 23 && i < 31 && (j==24 || j==39))
+                            A[i][j]= '*';
                     }
-                    cout << endl;
                 }
-                cout << player1 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][2] != 2 && C[0][2] != 1 && C[0][2] == C[1][1] && C[0][2] == C[2][0]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
+            }
+            if (column == 3 && row == 3) {
+                for (int i = 21; i < 32; i++) {
+                    for (int j = 42; j < 62; j++) {
+                        if ((i == 23 || i == 31) && (j > 45 && j < 60))
+                            A[i][j] = '*';
+                        if (i > 23 && i < 31 && (j==45 || j==60))
+                            A[i][j]= '*';
                     }
-                    cout << endl;
                 }
-                cout << player1 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][0] != 2 && C[0][0] != 0 && C[0][0] == C[0][1] && C[0][0] == C[0][2])//2nd player won
-            {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
-                    }
-                    cout << endl;
-                }
-                cout << player2 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[1][0] != 2 && C[1][0] != 0 && C[1][0] == C[1][1] && C[1][0] == C[1][2]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
-                    }
-                    cout << endl;
-                }
-                cout << player2 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[2][0] != 2 && C[2][0] != 0 && C[2][0] == C[2][0] && C[2][0] == C[2][2]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
-                    }
-                    cout << endl;
-                }
-                cout << player2 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][1] != 2 && C[0][1] != 0 && C[0][1] == C[1][1] && C[0][1] == C[2][1]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
-                    }
-                    cout << endl;
-                }
-                cout << player2 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][0] != 2 && C[0][0] != 2 && C[0][0] == C[1][0] && C[0][0] == C[2][0]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
-                    }
-                    cout << endl;
-                }
-                cout << player2 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][2] != 2 && C[0][2] != 0 && C[0][2] == C[1][2] && C[0][2] == C[2][2]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
-                    }
-                    cout << endl;
-                }
-                cout << player2 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][0] != 2 && C[0][0] != 0 && C[0][0] == C[1][1] && C[0][0] == C[2][2]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
-                    }
-                    cout << endl;
-                }
-                cout << player2 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
-            } else if (C[0][2] != 2 && C[0][2] != 0 && C[0][2] == C[1][1] && C[0][2] == C[2][0]) {
-                for (int i = 0; i < 32; i++) {
-                    for (int j = 0; j < 62; j++) {
-                        cout << A[i][j];
-                    }
-                    cout << endl;
-                }
-                cout << player2 << " won." << endl;
-                cout << "Do you want to play again? (y/n) ";
-                char answer;
-                cin >> answer;
-                isRunning = (answer == 'y' || answer == 'Y');
             }
         }
-
-    }
-
-    int main() {
-
-        string username;
-        cout << "Enter your username: ";
-        cin >> username;
-
-        do {
-            cout << "Do you want to play in Offline mode (1) or Online mode (2) or end "
-                    "the game (3)? ";
-            int mode;
-            cin >> mode;
-
-            if (mode == 1) {
-                string username2;
-                cout << "Enter the username for player 2: ";
-                cin >> username2;
-                offlineMode(username, username2);
-            } else if (mode == 2) {
-                cout << "Online mode under development!" << endl;
-            } else if (mode == 3) {
-                cout << "Goodbye!" << endl;
-                return 0;
-            } else {
-                cout << "Invalid input!\n" << endl;
+        whosNext++;
+        takenSpots++;
+        //Here starts the winner score counter and etc. like player1 wins:2 player2 wins:1
+        if (C[0][0] != 2 && C[0][0] != 1 && C[0][0] == C[0][1] && C[0][0] == C[0][2]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
             }
-
-        } while (true);
+            cout << player1 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[1][0] != 2 && C[1][0] != 1 && C[1][0] == C[1][1] && C[1][0] == C[1][2]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player1 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[2][0] != 2 && C[2][0] != 1 && C[2][0] == C[2][1] && C[2][0] == C[2][2]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player1 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][1] != 2 && C[0][1] != 1 && C[0][1] == C[1][1] && C[0][1] == C[2][1]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player1 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][0] != 2 && C[0][0] != 1 && C[0][0] == C[1][0] && C[0][0] == C[2][0]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player1 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][2] != 2 && C[0][2] != 1 && C[0][2] == C[1][2] && C[0][2] == C[2][2]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player1 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][0] != 2 && C[0][0] != 1 && C[0][0] == C[1][1] && C[0][0] == C[2][2]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player1 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][2] != 2 && C[0][2] != 1 && C[0][2] == C[1][1] && C[0][2] == C[2][0]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player1 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][0] != 2 && C[0][0] != 0 && C[0][0] == C[0][1] && C[0][0] == C[0][2])//2nd player won
+        {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player2 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[1][0] != 2 && C[1][0] != 0 && C[1][0] == C[1][1] && C[1][0] == C[1][2]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player2 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[2][0] != 2 && C[2][0] != 0 && C[2][0] == C[2][0] && C[2][0] == C[2][2]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player2 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][1] != 2 && C[0][1] != 0 && C[0][1] == C[1][1] && C[0][1] == C[2][1]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player2 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][0] != 2 && C[0][0] != 2 && C[0][0] == C[1][0] && C[0][0] == C[2][0]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player2 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][2] != 2 && C[0][2] != 0 && C[0][2] == C[1][2] && C[0][2] == C[2][2]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player2 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][0] != 2 && C[0][0] != 0 && C[0][0] == C[1][1] && C[0][0] == C[2][2]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player2 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        } else if (C[0][2] != 2 && C[0][2] != 0 && C[0][2] == C[1][1] && C[0][2] == C[2][0]) {
+            for (int i = 0; i < 32; i++) {
+                for (int j = 0; j < 62; j++) {
+                    cout << A[i][j];
+                }
+                cout << endl;
+            }
+            cout << player2 << " won." << endl;
+            cout << "Do you want to play again? (y/n) ";
+            char answer;
+            cin >> answer;
+            isRunning = (answer == 'y' || answer == 'Y');
+        }
     }
+
+}
+
+int main() {
+
+    string username;
+    cout << "Enter your username: ";
+    cin >> username;
+
+    do {
+        cout << "Do you want to play in Offline mode (1) or Online mode (2) or end "
+                "the game (3)? ";
+        int mode;
+        cin >> mode;
+
+        if (mode == 1) {
+            string username2;
+            cout << "Enter the username for player 2: ";
+            cin >> username2;
+            offlineMode(username, username2);
+        } else if (mode == 2) {
+            cout << "Online mode under development!" << endl;
+        } else if (mode == 3) {
+            cout << "Goodbye!" << endl;
+            return 0;
+        } else {
+            cout << "Invalid input!\n" << endl;
+        }
+
+    } while (true);
+}
