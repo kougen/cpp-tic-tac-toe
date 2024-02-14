@@ -21,7 +21,7 @@ test: $(OBJ)
 
 .PHONY: clean
 clean:
-	rm rm -f *.o lib/*.o tests/*.o tests/test1 $(TARGET)
+	rm rm -f *.o lib/*.o tests/*.out *.out tests/*.o $(TARGET)
 
 .PHONY: run
 run: $(TARGET)
