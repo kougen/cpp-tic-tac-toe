@@ -5,3 +5,6 @@
 bin/
 out/
 tests/*tests
+
+tictactoe
+
